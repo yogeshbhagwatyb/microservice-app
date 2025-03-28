@@ -397,12 +397,6 @@
 
 
 
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -416,7 +410,6 @@
       background: #f1f3f6;
     }
 
-    /* Top Header Bar */
     .header {
       display: flex;
       align-items: center;
@@ -466,7 +459,6 @@
       border-radius: 10px;
     }
 
-    /* Login Dropdown */
     .login-menu {
       position: relative;
     }
@@ -522,7 +514,6 @@
       display: block;
     }
 
-    /* Branding */
     .navbar {
       background-color: #2874f0;
       color: white;
@@ -533,7 +524,6 @@
       letter-spacing: 1px;
     }
 
-    /* Categories */
     .category-row {
       display: flex;
       justify-content: space-around;
@@ -563,22 +553,62 @@
     .category:hover span {
       color: #2874f0;
     }
+
+    #auth-modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #auth-modal .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+    }
+
+    #auth-modal input {
+      width: 100%;
+      margin: 5px 0;
+      padding: 8px;
+    }
+
+    #auth-modal button {
+      width: 100%;
+      padding: 10px;
+      background: #2874f0;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+
+    #auth-modal a {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      color: #2874f0;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Search + Login + Cart + Seller -->
+  <!-- Header -->
   <div class="header">
     <div class="search-bar">
       <input type="text" placeholder="🔍 Search for Products, Brands and More">
     </div>
     <div class="header-icons">
       <div class="login-menu">
-        <div class="login-button">👤 Login ▼</div>
+        <div class="login-button" onclick="openModal('login')">👤 Login ▼</div>
         <div class="login-dropdown">
           <div class="signup-row">
             <span>New customer?</span>
-            <a href="#">Sign Up</a>
+            <a href="#" onclick="openModal('signup')">Sign Up</a>
           </div>
           <hr />
           <a href="#">👤 My Profile</a>
@@ -598,44 +628,64 @@
     </div>
   </div>
 
-  <!-- Branding Centered -->
+  <!-- Branding -->
   <div class="navbar">VISHAKHA SHOPPING HUB ✨</div>
 
-  <!-- Category Row -->
+  <!-- Categories -->
   <div class="category-row">
-    <div class="category">
-      <img src="https://img.icons8.com/color/96/000000/shopping-basket.png" alt="Kilos" />
-      <span>Kilos</span>
-    </div>
-    <div class="category">
-      <img src="https://img.icons8.com/color/96/000000/smartphone-tablet.png" alt="Mobiles" />
-      <span>Mobiles</span>
-    </div>
-    <div class="category">
-      <img src="https://img.icons8.com/color/96/000000/laptop.png" alt="Electronics" />
-      <span>Electronics</span>
-    </div>
-    <div class="category">
-      <img src="https://img.icons8.com/color/96/000000/sofa.png" alt="Home" />
-      <span>Home</span>
-    </div>
-    <div class="category">
-      <img src="https://img.icons8.com/color/96/000000/washing-machine.png" alt="Appliances" />
-      <span>Appliances</span>
-    </div>
-    <div class="category">
-      <img src="https://img.icons8.com/color/96/000000/airplane-take-off.png" alt="Flights" />
-      <span>Flights</span>
-    </div>
-    <div class="category">
-      <img src="https://img.icons8.com/color/96/000000/teddy-bear.png" alt="Toys" />
-      <span>Toys</span>
-    </div>
-    <div class="category">
-      <img src="https://img.icons8.com/color/96/000000/motorcycle.png" alt="Bikes" />
-      <span>Bikes</span>
+    <div class="category"><img src="https://img.icons8.com/color/96/000000/shopping-basket.png"/><span>Kilos</span></div>
+    <div class="category"><img src="https://img.icons8.com/color/96/000000/smartphone-tablet.png"/><span>Mobiles</span></div>
+    <div class="category"><img src="https://img.icons8.com/color/96/000000/laptop.png"/><span>Electronics</span></div>
+    <div class="category"><img src="https://img.icons8.com/color/96/000000/sofa.png"/><span>Home</span></div>
+    <div class="category"><img src="https://img.icons8.com/color/96/000000/washing-machine.png"/><span>Appliances</span></div>
+    <div class="category"><img src="https://img.icons8.com/color/96/000000/airplane-take-off.png"/><span>Flights</span></div>
+    <div class="category"><img src="https://img.icons8.com/color/96/000000/teddy-bear.png"/><span>Toys</span></div>
+    <div class="category"><img src="https://img.icons8.com/color/96/000000/teddy-bear.png"/><span>Toys</span></div>
+    <div class="category"><img src="https://img.icons8.com/color/96/000000/motorcycle.png"/><span>Bikes</span></div>
+  </div>
+
+  <!-- Auth Modal -->
+  <div id="auth-modal">
+    <div class="modal-content">
+      <h3 id="modal-title">Sign Up</h3>
+      <form id="auth-form">
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button type="submit">Submit</button>
+      </form>
+      <a href="#" onclick="closeModal()">Close</a>
     </div>
   </div>
 
+  <!-- Scripts -->
+  <script>
+    let authMode = 'signup';
+
+    function openModal(mode) {
+      authMode = mode;
+      document.getElementById('modal-title').innerText = mode === 'signup' ? 'Sign Up' : 'Login';
+      document.getElementById('auth-modal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('auth-modal').style.display = 'none';
+    }
+
+    document.getElementById('auth-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      const res = await fetch(`/${authMode}`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ username, password })
+      });
+
+      const data = await res.json();
+      alert(data.message);
+      if (res.ok) closeModal();
+    });
+  </script>
 </body>
 </html>
