@@ -36,10 +36,11 @@ const db = require('./db'); // MySQL connection
 const app = express();
 const port = 3000;
 
+// Middleware
 app.use(express.json());
-app.use(express.static(__dirname)); // Serve static files from current folder
+app.use(express.static(__dirname)); // Serve index.html and other static files
 
-// Serve index.html on root
+// Serve index.html on root path
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
@@ -74,6 +75,7 @@ app.post('/login', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`✅ App running at http://localhost:${port}`);
+// 🔥 IMPORTANT: listen on 0.0.0.0 for Docker to expose it outside the container
+app.listen(port, '0.0.0.0', () => {
+  console.log(`✅ App running at http://0.0.0.0:${port}`);
 });
