@@ -382,13 +382,6 @@
 
 
 
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -452,7 +445,63 @@
       border-radius: 10px;
     }
 
-    /* Navbar Title */
+    /* Login Dropdown */
+    .login-menu {
+      position: relative;
+    }
+
+    .login-button {
+      background-color: #2874f0;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .login-dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      width: 220px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      border-radius: 6px;
+      z-index: 100;
+      padding: 10px;
+    }
+
+    .login-dropdown a {
+      display: block;
+      padding: 8px 10px;
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+
+    .login-dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .signup-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 10px;
+      font-size: 14px;
+    }
+
+    .signup-row a {
+      color: #2874f0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login-menu:hover .login-dropdown {
+      display: block;
+    }
+
+    /* Branding */
     .navbar {
       background-color: #2874f0;
       color: white;
@@ -463,7 +512,7 @@
       letter-spacing: 1px;
     }
 
-    /* Category Row */
+    /* Categories */
     .category-row {
       display: flex;
       justify-content: space-around;
@@ -497,13 +546,28 @@
 </head>
 <body>
 
-  <!-- Search + Account + Cart Header -->
+  <!-- Search + Login + Cart + Seller -->
   <div class="header">
     <div class="search-bar">
       <input type="text" placeholder="🔍 Search for Products, Brands and More">
     </div>
     <div class="header-icons">
-      <div><i>👤</i>Account ▼</div>
+      <div class="login-menu">
+        <div class="login-button">👤 Login ▼</div>
+        <div class="login-dropdown">
+          <div class="signup-row">
+            <span>New customer?</span>
+            <a href="#">Sign Up</a>
+          </div>
+          <hr />
+          <a href="#">👤 My Profile</a>
+          <a href="#">⭐ Vishakha Plus Zone</a>
+          <a href="#">📦 Orders</a>
+          <a href="#">💖 Wishlist</a>
+          <a href="#">🎁 Rewards</a>
+          <a href="#">🎫 Gift Cards</a>
+        </div>
+      </div>
       <div class="cart">
         <i>🛒</i>Cart
         <div class="cart-badge">3</div>
@@ -513,10 +577,10 @@
     </div>
   </div>
 
-  <!-- Branding Bar -->
+  <!-- Branding Centered -->
   <div class="navbar">VISHAKHA SHOPPING HUB ✨</div>
 
-  <!-- Categories -->
+  <!-- Category Row -->
   <div class="category-row">
     <div class="category">
       <img src="https://img.icons8.com/color/96/000000/shopping-basket.png" alt="Kilos" />
@@ -527,15 +591,11 @@
       <span>Mobiles</span>
     </div>
     <div class="category">
-      <img src="https://img.icons8.com/color/96/000000/dress-front-view.png" alt="Fashion" />
-      <span>Fashion</span>
-    </div>
-    <div class="category">
       <img src="https://img.icons8.com/color/96/000000/laptop.png" alt="Electronics" />
       <span>Electronics</span>
     </div>
     <div class="category">
-      <img src="https://img.icons8.com/color/96/000000/sofa.png" alt="Home & Furniture" />
+      <img src="https://img.icons8.com/color/96/000000/sofa.png" alt="Home" />
       <span>Home</span>
     </div>
     <div class="category">
@@ -551,7 +611,7 @@
       <span>Toys</span>
     </div>
     <div class="category">
-      <img src="https://img.icons8.com/color/96/000000/motorcycle.png" alt="Two Wheelers" />
+      <img src="https://img.icons8.com/color/96/000000/motorcycle.png" alt="Bikes" />
       <span>Bikes</span>
     </div>
   </div>
