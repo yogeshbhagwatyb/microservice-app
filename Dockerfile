@@ -6,7 +6,6 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-COPY .env .env  # ✅ Ensure .env is in your Git repo or created during Jenkins build
 
 EXPOSE 3000
 
