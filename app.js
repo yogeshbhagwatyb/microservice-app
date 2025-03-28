@@ -20,7 +20,11 @@ app.use(express.static(__dirname));
 
 // Route to serve index.html
 app.get('/', (req, res) => {
+<<<<<<< HEAD
   res.sendFile(path.join(__dirname, 'index.html'));
+=======
+  res.send('Hello Vishakha!!!!!!!!!! How are you?');
+>>>>>>> 3fe6fd8ac303693e1a3a7a445ea423f452ce5e92
 });
 
 app.listen(port, () => {
