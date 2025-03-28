@@ -1,29 +1,19 @@
-// const mysql = require('mysql2');
-
-// const connection = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'appuser',
-//   password: 'yourpassword', // or your password
-//   database: 'shopping_hub'
-// });
-
-// connection.connect((err) => {
-//   if (err) {
-//     console.error('❌ MySQL connection error:', err);
-//     process.exit(1);
-//   }
-//   console.log('✅ Connected to MySQL');
-// });
-// module.exports = connection;
-
-
 const mysql = require('mysql2');
+require('dotenv').config(); // Load environment variables from .env file
 
 const connection = mysql.createConnection({
-  host: '10.3.25.225', // 👈 magic name to connect from Docker to host
-  user: 'appuser',                 // or your DB user
-  password: 'StrongP@ss123',                 // or your password
-  database: 'shopping_hub'
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
+});
+
+connection.connect((err) => {
+  if (err) {
+    console.error('❌ MySQL connection error:', err);
+    process.exit(1);
+  }
+  console.log('✅ Connected to MySQL');
 });
 
 module.exports = connection;
