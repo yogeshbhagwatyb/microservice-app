@@ -23,7 +23,7 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
   host: '10.3.25.225', // 👈 magic name to connect from Docker to host
   user: 'root',                 // or your DB user
-  password: '',                 // or your password
+  password: 'yourpassword',                 // or your password
   database: 'shopping_hub'
 });
 
