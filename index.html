@@ -387,6 +387,22 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -400,7 +416,6 @@
       background: #f1f3f6;
     }
 
-    /* Top Header Bar */
     .header {
       display: flex;
       align-items: center;
@@ -450,7 +465,6 @@
       border-radius: 10px;
     }
 
-    /* Login Dropdown */
     .login-menu {
       position: relative;
     }
@@ -506,7 +520,6 @@
       display: block;
     }
 
-    /* Branding */
     .navbar {
       background-color: #2874f0;
       color: white;
@@ -517,7 +530,6 @@
       letter-spacing: 1px;
     }
 
-    /* Categories */
     .category-row {
       display: flex;
       justify-content: space-around;
@@ -551,7 +563,7 @@
 </head>
 <body>
 
-  <!-- Search + Login + Cart + Seller -->
+  <!-- Header -->
   <div class="header">
     <div class="search-bar">
       <input type="text" placeholder="🔍 Search for Products, Brands and More">
@@ -582,10 +594,10 @@
     </div>
   </div>
 
-  <!-- Branding Centered -->
+  <!-- Branding -->
   <div class="navbar">VISHAKHA SHOPPING HUB ✨</div>
 
-  <!-- Category Row -->
+  <!-- Categories -->
   <div class="category-row">
     <div class="category">
       <img src="https://img.icons8.com/color/96/000000/shopping-basket.png" alt="Kilos" />
@@ -618,6 +630,38 @@
     <div class="category">
       <img src="https://img.icons8.com/color/96/000000/motorcycle.png" alt="Bikes" />
       <span>Bikes</span>
+    </div>
+  </div>
+
+  <!-- Product Card -->
+  <div style="display: flex; justify-content: center; padding: 20px;">
+    <div style="width: 300px; background: white; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); overflow: hidden; font-family: Arial, sans-serif;">
+      <div style="position: relative;">
+        <img src="https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/z/n/z/-original-imagx9egbchdtzhe.jpeg" alt="vivo T3 Lite 5G" style="width: 100%;">
+        <div style="position: absolute; top: 10px; left: 10px; background: #0f8f2f; color: white; font-size: 12px; font-weight: bold; padding: 2px 6px; border-radius: 4px;">Bestseller</div>
+      </div>
+      <div style="padding: 15px;">
+        <h3 style="margin: 0 0 5px; color: #2874f0; font-size: 18px;">vivo Lite 5G (Vibrant Green, 128 GB)</h3>
+        <div style="color: #388e3c; font-weight: bold; margin: 5px 0;">⭐ 4.4 (66,299 Ratings & 2,337 Reviews)</div>
+        <ul style="padding-left: 20px; margin: 10px 0; font-size: 14px; color: #555;">
+          <li>6 GB RAM | 128 GB ROM | Expandable Upto 1 TB</li>
+          <li>16.66 cm (6.56 inch) Display</li>
+          <li>50MP + 2MP | 8MP Front Camera</li>
+          <li>5000 mAh Battery</li>
+          <li>Dimensity 6300 Processor</li>
+          <li>1 Year Warranty for Device + 6 Months for Accessories</li>
+        </ul>
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+          <div>
+            <div style="font-size: 20px; font-weight: bold;">₹11,499</div>
+            <div style="text-decoration: line-through; color: #888; font-size: 14px;">₹15,499</div>
+            <div style="color: green; font-weight: bold;">25% off</div>
+          </div>
+          <div style="color: red; font-size: 14px; font-weight: bold;">Only 1 left</div>
+        </div>
+        <div style="margin-top: 10px; color: green; font-size: 14px;">Free delivery</div>
+        <div style="margin-top: 4px; color: green; font-size: 14px;">Save extra with combo offers</div>
+      </div>
     </div>
   </div>
 
