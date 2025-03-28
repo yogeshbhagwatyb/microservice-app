@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishakha Shop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f3f6;
+    }
+    .navbar {
+      background-color: #2874f0;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+    .menu-item {
+      position: relative;
+      cursor: pointer;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 35px;
+      background: white;
+      color: black;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .menu-item:hover .dropdown {
+      display: block;
+    }
+    .dropdown a {
+      text-decoration: none;
+      display: block;
+      margin: 5px 0;
+      color: black;
+    }
+    .dropdown a:hover {
+      color: #2874f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">VISHAKHA ✨</div>
+    <div class="menu">
+      <div class="menu-item">Fashion
+        <div class="dropdown">
+          <a href="#">Men</a>
+          <a href="#">Women</a>
+          <a href="#">Kids</a>
+        </div>
+      </div>
+      <div class="menu-item">Electronics
+        <div class="dropdown">
+          <a href="#">Mobiles</a>
+          <a href="#">Laptops</a>
+        </div>
+      </div>
+      <div class="menu-item">Home</div>
+      <div class="menu-item">Login</div>
+      <div class="menu-item">Cart 🛒</div>
+    </div>
+  </div>
+</body>
+</html>
