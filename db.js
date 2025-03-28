@@ -14,7 +14,6 @@
 //   }
 //   console.log('✅ Connected to MySQL');
 // });
-
 // module.exports = connection;
 
 
@@ -23,7 +22,7 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
   host: '10.3.25.225', // 👈 magic name to connect from Docker to host
   user: 'appuser',                 // or your DB user
-  password: 'yourpassword',                 // or your password
+  password: 'StrongP@ss123',                 // or your password
   database: 'shopping_hub'
 });
 
