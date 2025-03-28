@@ -394,12 +394,164 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vishakha Shopping Hub</title>
   <style>
-    /* [Your existing CSS remains unchanged] */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f3f6;
+    }
+
+    /* Top Header Bar */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-bar {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: none;
+      background-color: #f0f5ff;
+      font-size: 16px;
+    }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 14px;
+    }
+
+    .header-icons i {
+      margin-right: 5px;
+    }
+
+    .cart {
+      position: relative;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -6px;
+      right: -10px;
+      background-color: red;
+      color: white;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 10px;
+    }
+
+    /* Login Dropdown */
+    .login-menu {
+      position: relative;
+    }
+
+    .login-button {
+      background-color: #2874f0;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .login-dropdown {
+      display: none;
+      position: absolute;
+      top: 40px;
+      right: 0;
+      width: 220px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      border-radius: 6px;
+      z-index: 100;
+      padding: 10px;
+    }
+
+    .login-dropdown a {
+      display: block;
+      padding: 8px 10px;
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+
+    .login-dropdown a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .signup-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 10px;
+      font-size: 14px;
+    }
+
+    .signup-row a {
+      color: #2874f0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login-menu:hover .login-dropdown {
+      display: block;
+    }
+
+    /* Branding */
+    .navbar {
+      background-color: #2874f0;
+      color: white;
+      padding: 15px 20px;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    /* Categories */
+    .category-row {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      background-color: white;
+      flex-wrap: wrap;
+    }
+
+    .category {
+      text-align: center;
+      cursor: pointer;
+      width: 80px;
+    }
+
+    .category img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 8px;
+    }
+
+    .category span {
+      font-size: 14px;
+      color: #212121;
+    }
+
+    .category:hover span {
+      color: #2874f0;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Search + Login + Cart + Seller -->
   <div class="header">
     <div class="search-bar">
       <input type="text" placeholder="🔍 Search for Products, Brands and More">
@@ -422,74 +574,50 @@
         </div>
       </div>
       <div class="cart">
-        🛒 Cart
+        <i>🛒</i>Cart
         <div class="cart-badge">3</div>
       </div>
-      <div>🏪 Become a Seller</div>
-      <div>⋮</div>
+      <div><i>🏪</i>Become a Seller</div>
+      <div><i>⋮</i></div>
     </div>
   </div>
 
-  <!-- Branding -->
+  <!-- Branding Centered -->
   <div class="navbar">VISHAKHA SHOPPING HUB ✨</div>
 
-  <!-- Category Icons -->
+  <!-- Category Row -->
   <div class="category-row">
-    <div class="category"><span>Kilos</span></div>
-    <div class="category"><span>Mobiles</span></div>
-    <div class="category"><span>Electronics</span></div>
-    <div class="category"><span>Home</span></div>
-    <div class="category"><span>Appliances</span></div>
-    <div class="category"><span>Flights</span></div>
-    <div class="category"><span>Toys</span></div>
-    <div class="category"><span>Bikes</span></div>
-  </div>
-
-  <!-- Product Scroll Sections -->
-  <div class="section">
-    <h2>Festive Must-haves</h2>
-    <div class="scroll-container">
-      <div class="product-card">
-        <div class="name">Watches</div>
-        <div class="offer">Don't Miss</div>
-      </div>
-      <div class="product-card">
-        <div class="name">Artificial Jewellery</div>
-        <div class="offer">Min. 70% Off</div>
-      </div>
-      <div class="product-card">
-        <div class="name">Women's Ethnic</div>
-        <div class="offer">Min. 50% Off</div>
-      </div>
+    <div class="category">
+      <img src="https://img.icons8.com/color/96/000000/shopping-basket.png" alt="Kilos" />
+      <span>Kilos</span>
     </div>
-  </div>
-
-  <div class="section">
-    <h2>Season’s Top Picks</h2>
-    <div class="scroll-container">
-      <div class="product-card">
-        <div class="name">Dry Fruits & Nuts</div>
-        <div class="offer">Min. 50% Off</div>
-      </div>
-      <div class="product-card">
-        <div class="name">Face Wash Combo</div>
-        <div class="offer">Top Picks</div>
-      </div>
+    <div class="category">
+      <img src="https://img.icons8.com/color/96/000000/smartphone-tablet.png" alt="Mobiles" />
+      <span>Mobiles</span>
     </div>
-  </div>
-
-  <!-- Suggested + Ad Panel -->
-  <div class="grid-container">
-    <div class="left-column">
-      <h3>Suggested for You</h3>
-      <div class="product-card">
-        <div class="name">Milton Pro Lunch Box</div>
-        <div class="offer">55% Off</div>
-      </div>
+    <div class="category">
+      <img src="https://img.icons8.com/color/96/000000/laptop.png" alt="Electronics" />
+      <span>Electronics</span>
     </div>
-    <div class="right-column">
-      <h2>Plan Your Next Adventure</h2>
-      <p>Discover Amazing Flight Deals with Vishakha!</p>
+    <div class="category">
+      <img src="https://img.icons8.com/color/96/000000/sofa.png" alt="Home" />
+      <span>Home</span>
+    </div>
+    <div class="category">
+      <img src="https://img.icons8.com/color/96/000000/washing-machine.png" alt="Appliances" />
+      <span>Appliances</span>
+    </div>
+    <div class="category">
+      <img src="https://img.icons8.com/color/96/000000/airplane-take-off.png" alt="Flights" />
+      <span>Flights</span>
+    </div>
+    <div class="category">
+      <img src="https://img.icons8.com/color/96/000000/teddy-bear.png" alt="Toys" />
+      <span>Toys</span>
+    </div>
+    <div class="category">
+      <img src="https://img.icons8.com/color/96/000000/motorcycle.png" alt="Bikes" />
+      <span>Bikes</span>
     </div>
   </div>
 
